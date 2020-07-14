@@ -1,10 +1,12 @@
 import express, { Request, Response } from 'express';
 import { router } from './routes/loginRoutes';
 import bodyParse from 'body-parser';
+import cookieSession from 'cookie-session';
 
 const app = express();
 
 app.use(bodyParse.urlencoded({ extended: true }));
+app.use(cookieSession({ keys: ['fake string'] }));
 app.use(router);
 
 app.listen(3000, () => {

@@ -8,10 +8,13 @@ router.get('/login', function (req, res) {
 });
 router.post('/login', function (req, res) {
     var _a = req.body, email = _a.email, password = _a.password;
-    if (email) {
-        res.send(email.toUpperCase());
+    if (email && password && email === 'hi@hi.com' && password === 'password') {
+        // mark the user has successfully logged in
+        req.session = { loggedIn: true };
+        // redirect the user to the root route
+        res.redirect('/');
     }
     else {
-        res.send('Invalid. You must provide an email');
+        res.send('Invalid email/password combo');
     }
 });

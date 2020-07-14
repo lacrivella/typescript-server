@@ -11,11 +11,11 @@ router.get('/login', (req: Request, res: Response) => {
     <form method="POST">
       <div>
         <label>Email</label>
-        <input name="em" />
+        <input name="email" />
       </div>
       <div>
         <label>Password</label>
-        <input name="pass" type="password" />
+        <input name="password" type="password" />
       </div>
       <button>Submit</button>
     </form>

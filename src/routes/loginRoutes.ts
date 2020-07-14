@@ -25,10 +25,11 @@ router.get('/login', (req: Request, res: Response) => {
 router.post('/login', (req: RequestWithBody, res: Response) => {
   const { email, password } = req.body;
 
-  if (email) {
-    res.send(email.toUpperCase());
+  if (email && password && email === 'hi@hi.com' && password === 'password') {
+    // mark the user has successfully logged in
+    // redirect the user to the root route
   } else {
-    res.send('Invalid. You must provide an email');
+    res.send('Invalid email/password combo');
   }
 });
 

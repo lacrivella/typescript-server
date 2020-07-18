@@ -34,4 +34,10 @@ class LoginController {
       res.send('Invalid email/password combo');
     }
   }
+
+  @get('/logout')
+  getLogout(req: Request, res: Response) {
+    req.session = null;
+    res.redirect('/');
+  }
 }

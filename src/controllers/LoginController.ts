@@ -24,7 +24,7 @@ class LoginController {
   @bodyValidator('email', 'password')
   postLogin(req: Request, res: Response) {
     const { email, password } = req.body;
-  
+
     if (email && password && email === 'hi@hi.com' && password === 'password') {
       // mark the user has successfully logged in
       req.session = { loggedIn: true };

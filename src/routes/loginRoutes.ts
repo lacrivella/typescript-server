@@ -16,7 +16,4 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
 
 const router = Router();
 
-router.get('/protected', requireAuth, (req: Request, res: Response) => {
-  res.send('User correctly logged in. Welcome to protected route.');
-});
 export { router };

@@ -21,4 +21,9 @@ class RootController {
       `);
     }
   }
+
+  @get('/protected')
+  getProtected(req: Request, res: Response) {
+    res.send('User correctly logged in. Welcome to protected route.');
+  }
 }
